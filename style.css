@@ -1,0 +1,218 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    background: linear-gradient(135deg, #ffd6e0, #ffeef2, #ffd1dc);
+    min-height: 100vh;
+    color: #5a2634;
+}
+
+/* PASSWORD */
+
+.password-screen {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.password-box {
+    background: rgba(255, 255, 255, 0.92);
+    width: 100%;
+    max-width: 420px;
+    padding: 45px 30px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(100, 30, 50, 0.2);
+    animation: appear 1s ease;
+}
+
+.heart {
+    font-size: 55px;
+    animation: heartbeat 1.5s infinite;
+}
+
+.password-box h1 {
+    margin: 15px 0 8px;
+    font-size: 30px;
+}
+
+.password-box p {
+    color: #8a5361;
+    margin-bottom: 25px;
+}
+
+.password-box input {
+    width: 100%;
+    padding: 14px;
+    border: 2px solid #f2b6c5;
+    border-radius: 12px;
+    outline: none;
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.password-box input:focus {
+    border-color: #d85b7a;
+}
+
+.password-box button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    background: #d85b7a;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.password-box button:hover {
+    background: #b83f60;
+    transform: translateY(-2px);
+}
+
+.error {
+    color: #d32f2f !important;
+    margin-top: 15px;
+    margin-bottom: 0 !important;
+}
+
+/* LETTER */
+
+.letter-screen {
+    display: none;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 15px;
+}
+
+.letter {
+    position: relative;
+    background: #fffaf5;
+    width: 100%;
+    max-width: 700px;
+    min-height: 650px;
+    padding: 55px 50px;
+    border-radius: 8px;
+    box-shadow: 0 15px 50px rgba(80, 30, 40, 0.2);
+    animation: letterOpen 1.2s ease;
+}
+
+.letter::before {
+    content: "";
+    position: absolute;
+    inset: 12px;
+    border: 1px solid #e8b8c4;
+    pointer-events: none;
+}
+
+.letter h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 35px;
+    color: #a93657;
+}
+
+.greeting {
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+
+.message {
+    font-size: 17px;
+    line-height: 1.9;
+    min-height: 300px;
+}
+
+.message p {
+    margin-bottom: 20px;
+}
+
+.closing {
+    margin-top: 35px;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.closing strong {
+    color: #b83f60;
+}
+
+.letter-decoration {
+    text-align: center;
+    font-size: 35px;
+    color: #d85b7a;
+    margin-bottom: 10px;
+}
+
+.bottom {
+    margin-top: 30px;
+}
+
+/* ANIMATIONS */
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes letterOpen {
+    from {
+        opacity: 0;
+        transform: scale(0.9) translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .password-box {
+        padding: 35px 22px;
+    }
+
+    .letter {
+        padding: 45px 28px;
+    }
+
+    .letter h2 {
+        font-size: 26px;
+    }
+
+    .message {
+        font-size: 16px;
+        line-height: 1.8;
+    }
+}
+
